@@ -53,5 +53,6 @@ Thumbs.db
 __pycache__/
 *.py[cod]
 artifacts/api-server/data/processed/
+artifacts/api-server/.venv/
 
 

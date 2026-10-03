@@ -15,10 +15,10 @@ run = "cd artifacts/api-server && python serve.py"
 [services.production]
 
 [services.production.build]
-args = ["python", "-m", "pip", "install", "-r", "requirements.txt"]
+args = ["sh", "-c", "python -m venv artifacts/api-server/.venv && artifacts/api-server/.venv/bin/python -m pip install -r requirements.txt"]
 
 [services.production.run]
-args = ["sh", "-c", "cd artifacts/api-server && python serve.py"]
+args = ["sh", "-c", "cd artifacts/api-server && .venv/bin/python serve.py"]
 
 [services.production.run.env]
 PORT = "8080"
