@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { apiFetch } from '../api';
 import { 
   X, 
   Download, 
@@ -30,7 +31,7 @@ export default function ReportModal({ isOpen, onClose, topIncidents }) {
         include_notes: true
       };
 
-      const res = await fetch(`/api/export/${format}`, {
+      const res = await apiFetch(`/api/export/${format}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)

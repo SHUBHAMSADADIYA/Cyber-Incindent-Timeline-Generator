@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { apiFetch } from '../api';
 import { 
   X, 
   ShieldAlert, 
@@ -21,7 +22,7 @@ export default function EventDetailDrawer({ eventId, onClose, onSelectEvent }) {
   useEffect(() => {
     if (!eventId) return;
     setLoading(true);
-    fetch(`/api/events/${eventId}`)
+    apiFetch(`/api/events/${eventId}`)
       .then(res => res.json())
       .then(data => {
         setEventData(data);

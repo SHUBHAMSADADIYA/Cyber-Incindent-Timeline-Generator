@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { apiFetch } from '../api';
 import { 
   Layers, 
   CheckCircle2, 
@@ -25,7 +26,7 @@ export default function PipelineTab({
 
   const fetchPipelineStatus = () => {
     setLoading(true);
-    fetch('/api/pipeline/status')
+    apiFetch('/api/pipeline/status')
       .then(res => res.json())
       .then(data => {
         setPipelineData(data);

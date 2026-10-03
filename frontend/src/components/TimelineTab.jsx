@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { apiFetch } from '../api';
 import { 
   Search, 
   Filter, 
@@ -76,7 +77,7 @@ export default function TimelineTab({
       params.append('sort_by', sortBy);
       params.append('sort_order', sortOrder);
 
-      const res = await fetch(`/api/events?${params.toString()}`);
+      const res = await apiFetch(`/api/events?${params.toString()}`);
       if (res.ok) {
         const data = await res.json();
         setEvents(data.events || []);

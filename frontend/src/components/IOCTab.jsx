@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { apiFetch } from '../api';
 import { 
   ShieldAlert, 
   Search, 
@@ -23,7 +24,7 @@ export default function IOCTab() {
 
   const fetchIocs = () => {
     setLoading(true);
-    fetch('/api/iocs')
+    apiFetch('/api/iocs')
       .then(res => res.json())
       .then(data => {
         setIocs(data || []);
@@ -42,7 +43,7 @@ export default function IOCTab() {
   const handleStatusChange = async (val, newStatus) => {
     setSavingKey(val);
     try {
-      const res = await fetch('/api/iocs/update', {
+      const res = await apiFetch('/api/iocs/update', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ indicator_value: val, analyst_status: newStatus })

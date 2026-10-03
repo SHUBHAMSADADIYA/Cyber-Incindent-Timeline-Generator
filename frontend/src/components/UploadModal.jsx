@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { apiFetch } from '../api';
 import { 
   X, 
   UploadCloud, 
@@ -48,12 +49,15 @@ export default function UploadModal({
     files.forEach(f => formData.append('files', f));
 
     try {
-      const res = await fetch('/api/upload', {
+      const res = await apiFetch('/api/upload', {
         method: 'POST',
         body: formData
       });
 
       if (!res.ok) {
+        if (res.status === 404) {
+          throw new Error('Upload API not found. Set VITE_API_BASE_URL to your deployed FastAPI URL in Vercel, then redeploy.');
+        }
         throw new Error(`Upload failed with status ${res.status}`);
       }
 

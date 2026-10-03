@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { apiFetch } from './api';
 import Header from './components/Header';
 import DashboardTab from './components/DashboardTab';
 import TimelineTab from './components/TimelineTab';
@@ -27,7 +28,7 @@ export default function App() {
 
   const fetchDashboardData = async () => {
     try {
-      const res = await fetch('/api/dashboard');
+      const res = await apiFetch('/api/dashboard');
       if (res.ok) {
         const data = await res.json();
         setMetrics(data);
@@ -39,7 +40,7 @@ export default function App() {
 
   const fetchHealth = async () => {
     try {
-      const res = await fetch('/api/health');
+      const res = await apiFetch('/api/health');
       if (res.ok) {
         const data = await res.json();
         setHealthStatus(data);
@@ -51,7 +52,7 @@ export default function App() {
 
   const fetchCase = async () => {
     try {
-      const res = await fetch('/api/case');
+      const res = await apiFetch('/api/case');
       if (res.ok) {
         const data = await res.json();
         setCaseDetails(data);
@@ -74,7 +75,7 @@ export default function App() {
   const handleRunDemo = async () => {
     setPipelineRunning(true);
     try {
-      const res = await fetch('/api/pipeline/load-demo', { method: 'POST' });
+      const res = await apiFetch('/api/pipeline/load-demo', { method: 'POST' });
       if (res.ok) {
         await refreshAll();
         setActiveTab('dashboard');
@@ -89,7 +90,7 @@ export default function App() {
   const handleRunEnterprise = async () => {
     setPipelineRunning(true);
     try {
-      const res = await fetch('/api/pipeline/load-enterprise', { method: 'POST' });
+      const res = await apiFetch('/api/pipeline/load-enterprise', { method: 'POST' });
       if (res.ok) {
         await refreshAll();
         setActiveTab('dashboard');
@@ -104,7 +105,7 @@ export default function App() {
   const handleRunTestSuite = async () => {
     setPipelineRunning(true);
     try {
-      const res = await fetch('/api/pipeline/load-test-suite', { method: 'POST' });
+      const res = await apiFetch('/api/pipeline/load-test-suite', { method: 'POST' });
       if (res.ok) {
         await refreshAll();
         setActiveTab('pipeline');

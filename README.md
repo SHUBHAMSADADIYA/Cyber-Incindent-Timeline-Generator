@@ -128,6 +128,8 @@ The application will start immediately at:
 
 Import this repository into Replit and create a deployment. The `.replit` configuration installs the Python requirements, builds the frontend, and starts the FastAPI server. The application binds to `0.0.0.0` and uses Replit's assigned `PORT` automatically. The enterprise sample is gzip-compressed to fit GitHub's file-size limit. SQLite data is stored under `data/processed/` and is not tracked; use persistent storage if uploaded data and investigation changes must survive redeployments.
 
+For a Vercel frontend, deploy the FastAPI backend separately and set `VITE_API_BASE_URL` to its public origin in the Vercel project environment variables. Redeploy the frontend after setting it. The backend must allow the Vercel site origin through CORS.
+
 ---
 
 ## Verifying the End-to-End Workflow

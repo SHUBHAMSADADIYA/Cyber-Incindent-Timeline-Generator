@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { apiFetch } from '../api';
 import { 
   FileText, 
   Save, 
@@ -23,7 +24,7 @@ export default function InvestigationTab({ onCaseUpdated }) {
 
   const fetchCaseDetails = async () => {
     try {
-      const res = await fetch('/api/case');
+      const res = await apiFetch('/api/case');
       if (res.ok) {
         const data = await res.json();
         setCaseId(data.case_id || 'CASE-001');
@@ -47,7 +48,7 @@ export default function InvestigationTab({ onCaseUpdated }) {
     setSaveSuccess(false);
 
     try {
-      const res = await fetch('/api/case', {
+      const res = await apiFetch('/api/case', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
