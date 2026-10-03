@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#080d1a] text-slate-100;
+  }
+}
+
+.glow-cyan {
+  box-shadow: 0 0 15px -3px rgba(6, 182, 212, 0.25);
+}
+
+.glow-red {
+  box-shadow: 0 0 15px -3px rgba(239, 68, 68, 0.25);
+}

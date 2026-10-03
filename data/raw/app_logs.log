@@ -1,0 +1,15 @@
+[2024-01-15 08:23:45] INFO - User login successful - User: admin IP: 192.168.1.100
+[2024-01-15 08:24:12] WARNING - Multiple failed login attempts detected - User: guest IP: 203.0.113.45
+[2024-01-15 08:25:33] INFO - Database connection established - User: dbuser IP: 10.0.0.50
+[2024-01-15 08:26:01] ERROR - SQL Injection attempt detected - User: attacker IP: 198.51.100.22
+[2024-01-15 08:27:15] INFO - File uploaded successfully - User: john.doe IP: 192.168.1.101
+[2024-01-15 08:28:42] CRITICAL - Unauthorized API access attempt - User: unknown IP: 203.0.113.60
+[2024-01-15 08:29:55] WARNING - High memory usage detected - User: system IP: 10.0.0.1
+[2024-01-15 08:31:20] INFO - Configuration file modified - User: admin IP: 192.168.1.102
+[2024-01-15 08:32:47] ERROR - Session timeout detected - User: temp_user IP: 198.51.100.100
+[2024-01-15 08:34:10] INFO - Report generated successfully - User: analyst IP: 192.168.1.103
+[2024-01-15 08:35:26] WARNING - Suspicious command execution - User: root IP: 10.0.0.100
+[2024-01-15 08:36:43] CRITICAL - Data exfiltration attempt detected - User: attacker IP: 203.0.113.70
+[2024-01-15 08:38:05] INFO - User session started - User: employee IP: 192.168.1.104
+[2024-01-15 08:39:22] ERROR - Authentication failed - User: invalid_user IP: 198.51.100.200
+[2024-01-15 08:40:38] WARNING - Privilege escalation attempt - User: lowpriv IP: 192.168.1.105
