@@ -3,4 +3,5 @@
 /data/processed/*.db-wal
 /data/samples/incident_timeline_cleaned.csv
 /frontend/node_modules/
+/.venv/
 __pycache__/

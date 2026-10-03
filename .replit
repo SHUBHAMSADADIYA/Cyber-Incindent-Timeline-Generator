@@ -1,6 +1,6 @@
-run = "python run.py"
+run = "sh -c 'if [ ! -x .venv/bin/python ]; then python -m venv .venv && .venv/bin/python -m pip install -r requirements.txt; fi; .venv/bin/python run.py'"
 
 [deployment]
 deploymentTarget = "cloudrun"
-build = ["sh", "-c", "pip install -r requirements.txt && cd frontend && npm install --no-audit --no-fund && npm run build"]
-run = ["python", "run.py"]
+build = ["sh", "-c", "python -m venv .venv && .venv/bin/python -m pip install -r requirements.txt && cd frontend && npm install --no-audit --no-fund && npm run build"]
+run = [".venv/bin/python", "run.py"]
