@@ -1,6 +1,20 @@
-run = "python run.py"
+modules = ["nodejs-24"]
 
 [deployment]
-deploymentTarget = "cloudrun"
-build = ["sh", "-c", "pip install -r requirements.txt && cd frontend && npm install --no-audit --no-fund && npm run build"]
-run = ["python", "run.py"]
+router = "application"
+deploymentTarget = "autoscale"
+
+[deployment.postBuild]
+args = ["pnpm", "store", "prune"]
+env = { "CI" = "true" }
+
+[workflows]
+runButton = "Project"
+
+[agent]
+stack = "PNPM_WORKSPACE"
+expertMode = true
+
+[postMerge]
+path = "scripts/post-merge.sh"
+timeoutMs = 20000

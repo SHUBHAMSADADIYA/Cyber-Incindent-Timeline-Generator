@@ -1,0 +1,6 @@
+/data/processed/*.db
+/data/processed/*.db-shm
+/data/processed/*.db-wal
+/data/samples/incident_timeline_cleaned.csv
+/frontend/node_modules/
+__pycache__/

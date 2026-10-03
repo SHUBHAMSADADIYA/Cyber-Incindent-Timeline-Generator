@@ -1,0 +1,10 @@
+run = "python run.py"
+modules = ["python-3.12", "nodejs-20", "web"]
+
+[deployment]
+deploymentTarget = "cloudrun"
+build = ["sh", "-c", "pip install -r requirements.txt && cd frontend && npm install --no-audit --no-fund && npm run build"]
+run = ["python", "run.py"]
+
+[nix]
+channel = "stable-25_05"
