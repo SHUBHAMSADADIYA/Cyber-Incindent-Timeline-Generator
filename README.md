@@ -72,8 +72,8 @@ Cyber-Incindent-Timeline-Generator/
 │   └── test_suite_gen.py      # Edge-case benchmark suite generator
 ├── data/
 │   ├── raw/                   # Multi-source raw log files (firewall, windows, syslog, app)
-│   ├── samples/               # Enterprise production dataset (incident_timeline_cleaned.csv) & test suites
-│   └── processed/             # SQLite database storage (cyber_incident.db)
+│   ├── samples/               # Compressed enterprise dataset & test suites
+│   └── processed/             # Local SQLite database storage (not tracked)
 ├── frontend/
 │   ├── src/
 │   │   ├── components/
@@ -126,7 +126,7 @@ The application will start immediately at:
 
 ### Deploying on Replit
 
-Import this repository into Replit and create a deployment. The `.replit` configuration installs the Python requirements, builds the frontend, and starts the FastAPI server. The application binds to `0.0.0.0` and uses Replit's assigned `PORT` automatically. SQLite data is stored under `data/processed/`; use persistent storage if uploaded data and investigation changes must survive redeployments.
+Import this repository into Replit and create a deployment. The `.replit` configuration installs the Python requirements, builds the frontend, and starts the FastAPI server. The application binds to `0.0.0.0` and uses Replit's assigned `PORT` automatically. The enterprise sample is gzip-compressed to fit GitHub's file-size limit. SQLite data is stored under `data/processed/` and is not tracked; use persistent storage if uploaded data and investigation changes must survive redeployments.
 
 ---
 

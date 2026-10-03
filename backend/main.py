@@ -1,3 +1,4 @@
+import gzip
 import os
 import io
 import time
@@ -16,7 +17,7 @@ from .pipeline import PipelineRunner
 from .reporting import generate_incident_pdf, generate_incident_csv, generate_incident_json
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_DATASET_PATH = PROJECT_ROOT / "data" / "samples" / "incident_timeline_cleaned.csv"
+DEFAULT_DATASET_PATH = PROJECT_ROOT / "data" / "samples" / "incident_timeline_cleaned.csv.gz"
 TEST_SUITE_PATH = PROJECT_ROOT / "data" / "samples" / "test_incident_suite.csv"
 RAW_DATA_DIR = PROJECT_ROOT / "data" / "raw"
 
@@ -445,7 +446,7 @@ def load_default_cleaned_dataset(max_records: int = 100000, clear_existing: bool
 
     batch = []
     total_loaded = 0
-    with open(cleaned_path, "r", encoding="utf-8", errors="replace") as f:
+    with gzip.open(cleaned_path, "rt", encoding="utf-8", errors="replace") as f:
         reader = csv.reader(f)
         next(reader, None)  # skip header
         for idx, line in enumerate(reader, start=1):
