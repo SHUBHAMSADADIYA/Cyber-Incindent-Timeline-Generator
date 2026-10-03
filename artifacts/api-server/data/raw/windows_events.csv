@@ -1,0 +1,16 @@
+TimeCreated,Computer,Level,Message,EventID
+2024-01-15 08:23:45,SERVER01,Information,User admin logged in,4624
+2024-01-15 08:24:12,SERVER01,Warning,Failed login attempt for user guest,4625
+2024-01-15 08:25:33,SERVER01,Information,Network connection established from 192.168.1.50,5156
+2024-01-15 08:26:01,WORKSTATION02,Error,Access denied to file C:\Sensitive\data.xlsx,4656
+2024-01-15 08:27:15,GATEWAY01,Information,Firewall rule applied,4948
+2024-01-15 08:28:42,SERVER01,Warning,Suspicious process execution detected,4688
+2024-01-15 08:29:55,WORKSTATION03,Information,User john.doe logged on,4624
+2024-01-15 08:31:20,SERVER02,Critical,SQL Server error - Database integrity check failed,5128
+2024-01-15 08:32:47,GATEWAY01,Warning,DDoS attack detected from 203.0.113.45,5157
+2024-01-15 08:34:10,SERVER01,Error,Authentication failed for domain\user01,4771
+2024-01-15 08:35:26,WORKSTATION02,Information,Windows Update installation completed,15
+2024-01-15 08:36:43,SERVER03,Warning,Privilege escalation attempt by user temp_user,4673
+2024-01-15 08:38:05,GATEWAY01,Information,VPN connection from 198.51.100.22,6272
+2024-01-15 08:39:22,SERVER01,Error,Disk space critical - 2% remaining,2013
+2024-01-15 08:40:38,WORKSTATION04,Information,File C:\ProgramFiles\app.exe copied to USB drive,4663

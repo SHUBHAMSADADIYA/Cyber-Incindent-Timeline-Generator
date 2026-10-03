@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Cyber Incident Timeline"
+description = "A cyber incident investigation workspace for ingesting logs, reviewing timelines and threat indicators, recording case notes, and exporting evidence reports."
+version = "1.0.0"
+id = "artifacts/incident-timeline"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19552
+
+[services.development]
+run = "pnpm --filter @workspace/incident-timeline run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/incident-timeline", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/incident-timeline/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19552"
+BASE_PATH = "/"
