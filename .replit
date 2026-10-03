@@ -1,3 +1,4 @@
+
 modules = ["nodejs-24", "python-3.12"]
 
 [deployment]
@@ -22,3 +23,5 @@ timeoutMs = 20000
 [nix]
 channel = "stable-25_05"
 packages = ["freetype", "glibcLocales", "libxcrypt"]
+
+
